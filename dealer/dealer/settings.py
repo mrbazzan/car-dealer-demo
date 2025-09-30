@@ -59,6 +59,9 @@ INSTALLED_APPS = [
     'treebeard',
     'parler',
 
+    # internal apps
+    "vehicle",
+
     'filer',
     'easy_thumbnails',
     'djangocms_frontend',
