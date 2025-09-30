@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% for car in object_list %}
+  <div class="car">
+    <a href="{{ car.absolute_url }}">
+      {{ car.pk }}
+      <p> {{ car.car_type.brand }}: {{ car.name }} </p>
+    </a>
+  </div>
+  {% empty %}
+    <p> empty </p>
+  {% endfor %}
+{% endblock %}

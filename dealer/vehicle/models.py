@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 # Create your models here.
 
@@ -14,3 +15,5 @@ class Car(models.Model):
     color = models.CharField(max_length=100)
     car_type = models.ForeignKey(CarType, on_delete=models.CASCADE)
 
+    def absolute_url(self):
+        return reverse("vehicle:cardetail", args=[self.pk])
