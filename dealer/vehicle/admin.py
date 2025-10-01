@@ -10,4 +10,4 @@ class CarTypeAdmin(admin.ModelAdmin):
 
 @admin.register(Car)
 class CarAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
-    pass
+    frontend_editable_fields = ("name", "color")

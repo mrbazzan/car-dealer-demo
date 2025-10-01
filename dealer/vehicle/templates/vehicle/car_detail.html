@@ -2,7 +2,7 @@
 {% load cms_tags %}
 
 {% block content %}
-  <p>CAR NAME: {% render_model car "name" %}</p>
-  <p>CAR COLOR: {{ car.color }}</p>
+  <p>CAR NAME: {% render_model car "name" "name" %}</p>
+  <p>CAR COLOR: {% render_model car "color" "color" %}</p>
   <p>CAR BRAND: {{ car.car_type.brand }}</p>
 {% endblock %}
