@@ -1,4 +1,5 @@
 from django.contrib import admin
+from cms.admin.placeholderadmin import FrontendEditableAdminMixin
 from .models import CarType, Car
 
 # Register your models here.
@@ -8,5 +9,5 @@ class CarTypeAdmin(admin.ModelAdmin):
     pass
 
 @admin.register(Car)
-class CarAdmin(admin.ModelAdmin):
+class CarAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
     pass
