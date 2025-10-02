@@ -5,4 +5,11 @@
   <p>CAR NAME: {% render_model car "name" "name" %}</p>
   <p>CAR COLOR: {% render_model car "color" "color" %}</p>
   <p>CAR BRAND: {{ car.car_type.brand }}</p>
+
+  {% if request.toolbar.edit_mode_active %}
+    {{ block.super }}
+  {% else %}
+    {% render_placeholder car.content %}
+  {% endif %}
+
 {% endblock %}
