@@ -11,6 +11,21 @@ class CarListView(ListView):
     model = Car
     queryset = Car.objects.all()
 
+    def dispatch(self, request, *args, **kwargs):
+        language = get_language_from_request(request)
+
+        if request.toolbar.preview_mode_active or request.toolbar.edit_mode_active:
+            # add unpublished pagecontent object to the toolbar
+            request.toolbar.set_object(
+                request.current_page.get_admin_content(language)
+            )
+        else:
+            # add published pagecontent object to the toolbar
+            request.toolbar.set_object(
+                request.current_page.get_content_obj(language)
+            )
+        return super().dispatch(request, *args, **kwargs)
+
 
 class CarDetailView(DetailView):
     model = Car
