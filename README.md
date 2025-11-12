@@ -4,7 +4,7 @@ To install the project:
 
 1. Clone repository
    ```
-   git clone git@github.com:mrbazzan/youtube.git
+   git clone git@github.com:mrbazzan/car-dealer-demo.git
    ```
 2. Change to the app directory
    ```
